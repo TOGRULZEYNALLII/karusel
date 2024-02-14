@@ -1,11 +1,7 @@
-let butonright = document.getElementById("button-right");
-let buttonleft = document.getElementById("button-left");
-const imageToChange = document.getElementById("imageToChange");
-
-butonright.addEventListener("click", function () {
-  if (imageToChange.src.includes("imagesimagemain.webp")) {
-    imageToChange.src = "/images/image3.webp";
-  } else {
-    imageToChange.src = "/images/image4.webp";
-  }
+const mainimg = document.querySelector("#mainimg");
+const thumbs = document.querySelector("#container-images img");
+thumbs.forEach((thumb) => {
+  thumb.addEventListener("click", (event) => {
+    mainimg.src = event.target.src;
+  });
 });
